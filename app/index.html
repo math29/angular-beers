@@ -42,6 +42,13 @@
             <div class="form-group">
               <input ng-model="query" placeholder="Recherche">
             </div>
+            <div class="form-group">
+              	<select ng-model="order">
+              		<option value="alcohol">Force Alcool</option>
+              		<option value="name">Nom</option>
+              		<option value="-age">Age</option>
+              	</select>
+            </div>
             <!-- <button type="submit" class="btn btn-success">Sign in</button> -->
           </form>
         </div><!--/.navbar-collapse -->
@@ -60,7 +67,7 @@
     <div class="container">
       	<!-- Example row of columns -->
       	<div class="row" >
-	        <div class="col-md-4" ng-repeat="beer in beers | filter:query">
+	        <div class="col-md-4" ng-repeat="beer in beers | filter:query | orderBy:order">
 	          	<h2>{{ beer.name }}</h2>
 				<p>{{ beer.description }}</p>
 	        </div>
