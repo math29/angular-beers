@@ -14,6 +14,8 @@ app.controller('BeerListCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.order = "name";
 }]);
 
-app.controller('BeerDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-	$scope.beerId = $routeParams.beerId;
+app.controller('BeerDetailCtrl', ['$scope', '$routeParams', "$http", function($scope, $routeParams, $http) {
+	$http.get('beers/'+ $routeParams.beerId+'.json').success(function(data, status, headers, config) {
+		$scope.data = data;
+	})
 }])
