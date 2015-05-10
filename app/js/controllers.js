@@ -17,5 +17,9 @@ app.controller('BeerListCtrl', ['$scope', '$http', function($scope, $http){
 app.controller('BeerDetailCtrl', ['$scope', '$routeParams', "$http", function($scope, $routeParams, $http) {
 	$http.get('beers/'+ $routeParams.beerId+'.json').success(function(data, status, headers, config) {
 		$scope.data = data;
-	})
+		$scope.mainImg = $scope.data.img;
+	    $scope.setImage = function(img) {
+	      $scope.mainImg = img;
+	    }
+	});
 }])

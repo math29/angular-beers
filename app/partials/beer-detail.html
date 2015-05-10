@@ -1,9 +1,23 @@
+<img ng-src="{{mainImg}}" class="beer">
+
 <h1>{{ data.name }}</h1>
 <div class="row">
-	<div class="col-md-2">
-		<img src="{{ data.img }}" alt="{{ data.name }}">
+	<div class="col-md-12">
+		<div class="row">
+		  <div class="col-xs-6 col-md-3" >
+		  	<div class="thumbnail">
+		  		<img ng-src="{{data.img}}" ng-click="setImage(data.img)">
+		  	</div>
+		  </div>
+		  <div class="col-xs-6 col-md-3" >
+		  	<div class="thumbnail">
+		  		<img ng-src="{{data.label}}" ng-click="setImage(data.label)">
+		  	</div>
+		      
+		  </div>
+		</div>
 	</div>
-	<div class="col-md-10">
+	<div class="col-md-12">
 		<ul>
 			<li>Alcool : {{ data.alcohol | strongAlcohol }}</li>
 			<li>Description : {{ data.description }}</li>
