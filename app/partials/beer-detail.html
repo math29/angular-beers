@@ -1,17 +1,17 @@
 <img ng-src="{{mainImg}}" class="beer">
 
-<h1>{{ data.name }}</h1>
+<h1>{{ beer.name }}</h1>
 <div class="row">
 	<div class="col-md-12">
 		<div class="row">
 		  <div class="col-xs-6 col-md-3" >
 		  	<div class="thumbnail">
-		  		<img ng-src="{{data.img}}" ng-click="setImage(data.img)">
+		  		<img ng-src="{{beer.img}}" ng-click="setImage(beer.img)">
 		  	</div>
 		  </div>
 		  <div class="col-xs-6 col-md-3" >
 		  	<div class="thumbnail">
-		  		<img ng-src="{{data.label}}" ng-click="setImage(data.label)">
+		  		<img ng-src="{{beer.label}}" ng-click="setImage(beer.label)">
 		  	</div>
 		      
 		  </div>
@@ -19,11 +19,11 @@
 	</div>
 	<div class="col-md-12">
 		<ul>
-			<li>Alcool : {{ data.alcohol | strongAlcohol }}</li>
-			<li>Description : {{ data.description }}</li>
-			<li>Brewery : {{ data.brewery }}</li>
-			<li>Serving : {{ data.serving }}</li>
-			<li>Style : {{ data.style }}</li>
+			<li>Alcool : {{ beer.alcohol | strongAlcohol }}</li>
+			<li>Description : {{ beer.description }}</li>
+			<li>Brewery : {{ beer.brewery }}</li>
+			<li>Serving : {{ beer.serving }}</li>
+			<li>Style : {{ beer.style }}</li>
 		</ul>
 
 	</div>
