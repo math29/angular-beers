@@ -1,30 +1,60 @@
-<img ng-src="{{mainImg}}" class="beer">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  </ol>
 
-<h1>{{ beer.name }}</h1>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+    	<center><img ng-src="{{beer.img}}" alt="{{beer.name}}"></center>
+      <div class="carousel-caption">
+      	<h1>{{ beer.name }}</h1>
+      </div>
+    </div>
+    <div class="item">
+    	<center><img ng-src="{{beer.label}}" alt="label {{beer.name}}"></center>
+      <div class="carousel-caption">
+      	<h1>{{ beer.name }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" data-target="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <div class="row">
 	<div class="col-md-12">
-		<div class="row">
-		  <div class="col-xs-6 col-md-3" >
-		  	<div class="thumbnail">
-		  		<img ng-src="{{beer.img}}" ng-click="setImage(beer.img)">
-		  	</div>
-		  </div>
-		  <div class="col-xs-6 col-md-3" >
-		  	<div class="thumbnail">
-		  		<img ng-src="{{beer.label}}" ng-click="setImage(beer.label)">
-		  	</div>
-		      
-		  </div>
-		</div>
-	</div>
-	<div class="col-md-12">
-		<ul>
-			<li>Alcool : {{ beer.alcohol | strongAlcohol }}</li>
-			<li>Description : {{ beer.description }}</li>
-			<li>Brewery : {{ beer.brewery }}</li>
-			<li>Serving : {{ beer.serving }}</li>
-			<li>Style : {{ beer.style }}</li>
-		</ul>
+		<table class="table table-condensed">
+		  	<tr>
+				<td class="active">Alcool</td>
+				<td class="success">{{ beer.alcohol | strongAlcohol }}</td>
+			</tr>
+			<tr>
+				<td class="active">Description</td>
+				<td class="success">{{ beer.description }}</td>
+			</tr>
+			<tr>
+				<td class="active">Brewery</td>
+				<td class="success">{{ beer.brewery }}</td>
+			</tr>
+			<tr>
+				<td class="active">Serving</td>
+				<td class="success">{{ beer.serving }}</td>
+			</tr>
+			<tr>
+				<td class="active">Style</td>
+				<td class="success">{{ beer.style }}</td>
+			</tr>
+		</table>
 
 	</div>
 </div>
